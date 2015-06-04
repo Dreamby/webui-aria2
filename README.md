@@ -1,4 +1,5 @@
 webui-aria2-cn
+**注意：由于暂时未完全搞明白源代码，所以只是简单的做了某些界面上的汉化，使用时，可以把带有-zh的文件替代相应的原文件即可实现界面汉化。
 ===========
 
 ![Main interface](/screenshots/overview.png?raw=true)
