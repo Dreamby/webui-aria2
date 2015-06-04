@@ -1,60 +1,64 @@
-webui-aria2
+webui-aria2-cn
 ===========
 
 ![Main interface](/screenshots/overview.png?raw=true)
 
-The aim for this project is to create the worlds best and hottest interface to interact with aria2. aria2 is the worlds best file downloader, but sometimes the command line brings more power than necessary. The project was initially created as part of the GSOC scheme, however it has rapidly grown and changed with tremendous support and feedback from the aria2 community.
+本项目是从 [ziahamza/webui-aria2](https://github.com/ziahamza/webui-aria2) fork而来的一个用于汉化界面的一个小项目。
 
-Very simple to use, no build scripts, no installation scripts. First start aria2 in the background either in your local machine or in a remote one. You can do that as follows:
+webui-aria2 的目标就是创建和 aria2 交互的世界上最好和最热门的界面。aria2 是世界上最好的文件下载器，但是有些时候命令行总是带来了比所需更强大的功能。项目最初创建是作为 GSOC 方案的一部分，尽管如此，它在来自 aria2 社区的强大的技术支持和反馈下，已经快速的成长并发生变化。。。
+
+使用非常简单，无需构建脚本，无需安装脚本。首先在你的本地主机或者远端主机上后台启动 aria2，你可以如下这样做:
 ````bash
 aria2c --enable-rpc --rpc-listen-all
 ````
 
 
-If aria2 is not installed in your local machine then head on to http://aria2.sourceforge.net/ and follow the instructions there.
+如果 aria2 还未在你的本地机器上安装的话，那么转到 http://aria2.sourceforge.net/ 并按照其中的说明完成。
 
-Then download the webui, you can either do that by downloading this repository and running index.html in the browser. Or you could just head on to http://ziahamza.github.io/webui-aria2/ and just start downloading files! After that you can also save it for offline use by saving from the browser save page as option.
+然后下载 webui，你可以通过下载本库并在浏览器中运行 index.html 来完成操作。或者你只需转到 http://ziahamza.github.io/webui-aria2/ 并开始下载文件!之后，你可以使用浏览器的页面另存为选项保存它以作离线使用。
 
-Tips
+
+
+提示
 ====
-1. You can always select which files to download in case of torrents or metalinks. Just pause a download and a list icon should appear next to the settings button. To select which files to download before starting the download, give the flag --pause-metadata to aria2. See [link](http://aria2.sourceforge.net/manual/en/html/aria2c.html#cmdoption--pause-metadata)
+1. 在使用种子或 metalinks 的情况下，你总是可以选择要下载那些文件，只需暂停下载，那么应该就会有一个列表图标出现在设置按钮旁边。在开始下载前选择要下载那些文件，赋予标志 --pause-metadata 给 aria2。查看[链接](http://aria2.sourceforge.net/manual/en/html/aria2c.html#cmdoption--pause-metadata)
 
-Configuration
+配置
 =============
-Read and edit [configuration.js](configuration.js).
+阅读并编辑 [configuration.js](configuration.js)。
 
 DirectURL
 ---------
-This feature allows users to download files that they download from aria2 directly from the webui dashboard. If you are familiar with how webservers work, setup a http server that points at the configured aria2 download directory, check permissions. Then Specify a full url: ```http://server:port/``` in the webui directURL configuration.
+这个功能让用户可以直接从 webui 的仪表板下载它们从 aria2 下载的文件。如果你熟悉网络服务器的运作，设置一个指向配置的 aria2 下载目录的 http 服务器，勾选权限。然后在 webui 的 directURL 配置中指定一个完整的 URL: ```http://服务器:端口/```。
 
-If the above is not obvious, keep reading what this is about in [directurl.md](directurl.md)
+如果上面还表述不清楚，继续阅读在 [directurl.md](directurl.md) 中关于这方面的内容。
 
-Dependencies
+依赖关系
 ============
-Well, you need aria2. And a web browser (if that even counts!)
+嗯，你需要 aria2。还有一个网络浏览器(如果这也算的话!)
 
-Docker support
+Docker 支持
 ==============
-You can also try or use webui-aria2 in your LAN inside a Docker sandbox.
+你也可以在一个 Docker 沙盒中的你的 LAN 中尝试或使用 webui-aria2。
 
-Build the image
+构建镜像
 
 ````bash
 sudo docker build -t yourname/webui-aria2 .
 ````
 
-..and run it! It will be available at: `http://localhost:9100`
+..并运行它!它将可以这样访问: `http://localhost:9100`
 
 ````bash
 sudo docker run -v /Downloads:/data -p 6800:6800 -p 9100:8080 --name="webui-aria2" yourname/webui-aria2
 ````
 
-`/Downloads` is the directory in the host where you want to keep the downloaded files
+`/Downloads` 是你保存下载的文件所在的主机中的目录
 
-Support
+技术支持
 =======
-For any support, feature request and bug report add an issue in the github project. [link](https://github.com/ziahamza/webui-aria2/issues)
+由于本项目只是进行界面汉化，如果发现原项目可以使用而本项目无法实现的功能，请告知本人。但是如果要获得任何技术支持、功能请求和错误报告，请在原作的 github 项目中添加一个发问。[链接](https://github.com/ziahamza/webui-aria2/issues)
 
-License
+许可
 =======
-Refer to the LICENSE file (MIT License). If the more liberal license is needed then add it as an issue
+参考原项目的 LICENSE 文件(MIT License)。[链接](https://github.com/ziahamza/webui-aria2)
